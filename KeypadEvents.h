@@ -16,21 +16,21 @@
 #define UP 0
 #define DOWN 1
 
-#ifndef ROW1PIN
-#define ROW1PIN 1
-#endif
-
-#ifndef ROW2PIN
-#define ROW2PIN 2
-#endif
-
-#ifndef ROW3PIN
-#define ROW3PIN 3
-#endif
-
-#ifndef ROW4PIN
-#define ROW4PIN 4
-#endif
+//#ifndef ROW1PIN
+//#define ROW1PIN 1
+//#endif
+//
+//#ifndef ROW2PIN
+//#define ROW2PIN 2
+//#endif
+//
+//#ifndef ROW3PIN
+//#define ROW3PIN 3
+//#endif
+//
+//#ifndef ROW4PIN
+//#define ROW4PIN 4
+//#endif
 
 #ifndef R1
 #define R1 10000
@@ -67,13 +67,15 @@
 
 class KeypadEvents {
     public:
-        KeypadEvents();
+        KeypadEvents(int[]);
         void onKeyDown(void(*)(char));
         void onKeyUp(void(*)(char));
         void onKeyPressed(void(*)(char));  // Down and up
+        void init();
         void readEvents();
 
     private:
+        int pinmap[4];
         int getCol(int);
         typedef struct _callback {
 			void (*function)(char);

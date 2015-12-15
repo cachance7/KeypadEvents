@@ -58,7 +58,7 @@
 
 /* For the default resistor values, this is a pretty good default. */
 #ifndef TOLERANCE
-#define TOLERANCE 0.004
+#define TOLERANCE 0.010
 #endif
 
 #define ANALOG_COUNTS(r) ((VCC / 5.0) * 1024 * RCOMM / (RCOMM + r))
